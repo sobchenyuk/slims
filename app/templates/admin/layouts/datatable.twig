@@ -1,0 +1,72 @@
+<div class="row">
+<div class="col-md-12">
+    <div class="panel panel-default">
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                        {% for field in fields %}
+                            {% set order_type_icon = '<i class="fa fa-sort"></i>' %}
+                            {% if page_order_by == field %}
+                                {% if page_order_type == 'asc' %}
+                                    {% set order_type = 'desc' %}
+                                    {% set order_type_icon = '<i class="fa fa-sort-asc"></i>' %}
+                                {% else %}
+                                    {% set order_type = 'asc' %}
+                                    {% set order_type_icon = '<i class="fa fa-sort-desc"></i>' %}
+                                {% endif %}
+                            {% else %}
+                                {% set order_type = 'asc' %}
+                            {% endif %}
+                            <th><a href="{{ path_for(current_route_name) }}?order_by={{ field }}&order_type={{ order_type }}">{{field | capitalize}} {{ order_type_icon | raw }}</a></th>
+                        {% endfor %}
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in items %}
+                        <tr>
+                            {% for field in fields %}
+                            <td>{{item[field][:50]}}</td>
+                            {% endfor %}
+                            <td>
+                                <a href="{{ path_for(edit_link, {'id': item.id}) }}" class="btn btn-xs btn-primary">edit</a>
+                                <form method="POST" action="{{ path_for(delete_link, {'id': item.id}) }}" style="display:inline;">
+                                    <input name="{{csrf.valueKey}}" type="hidden" value="{{csrf.value}}">
+                                    <input name="{{csrf.nameKey}}" type="hidden" value="{{csrf.name}}">
+
+                                    <button type="success" class="btn btn-xs btn-danger">delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+            <table class="table">
+                <tr>
+                <td>{% include 'admin/layouts/pagination.twig' with {'pagination': items} only %}</td>
+                <td class="text-right">
+                    <form class="pagination ajax ajax-form">
+                        <b>Count: </b>
+                        <select class="ajax-submit" name="count_page">
+                            {% for p in page_counts %}
+                                <option value="{{p}}" {% if page_count==p %}selected=""{% endif %}>{{p}}</option>
+                            {% endfor %}
+                        </select>
+                    </form>
+                </td>
+                </tr>
+            </table>
+            {#{ items.hasMorePages() }#}
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+<!-- /.col-lg-6 -->
+</div>
+<!-- /.row -->

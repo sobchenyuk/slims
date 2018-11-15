@@ -1,0 +1,9 @@
+{
+    "dependeny": [
+        "Sections"
+    ],
+    "params": {
+        "installed": true,
+        "active": true
+    }
+}

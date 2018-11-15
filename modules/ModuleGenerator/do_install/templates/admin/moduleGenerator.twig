@@ -1,0 +1,43 @@
+{% extends 'admin.twig' %}
+
+{% block body %}
+    {% include 'admin/layouts/header.twig' %}
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+    <form action="{{ path_for('developers.module.generator.add') }}" method="post">
+        <input name="{{csrf.valueKey}}" type="hidden" value="{{csrf.value}}">
+        <input name="{{csrf.nameKey}}" type="hidden" value="{{csrf.name}}">
+
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Description</label>
+            <textarea name="description" class="form-control" rows="5"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>System name</label><sub class="text-danger">&nbsp;&nbsp;&nbsp;*only latin <b>letters</b>, <b>numbers</b> and symbold "<b>_</b>"</sub>
+            <input type="text" name="system_name" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Version</label>
+            <input type="text" name="version" value="1.0" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Author</label>
+            <input type="text" name="author" value="{{ user.login }}" class="form-control">
+        </div>
+
+        <input class="btn btn-success" type="submit" value="Create">
+    </form>
+        </div>
+    </div>
+    <!-- /.row -->
+    {% include 'admin/layouts/footer.twig' %}
+{% endblock %}

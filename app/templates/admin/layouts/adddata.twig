@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col-md-2"></div>
+<div class="col-md-8">
+    {% if type_link is defined %}
+        <form action="{{ path_for(type_link) }}" method="POST" enctype="multipart/form-data">
+    {% else %}
+        <form action="{{ path_for(store_link) }}" method="POST" enctype="multipart/form-data">
+    {% endif %}
+        <input name="{{csrf.valueKey}}" type="hidden" value="{{csrf.value}}">
+        <input name="{{csrf.nameKey}}" type="hidden" value="{{csrf.name}}">
+
+    {% set type = 'Add' %}
+    {#% for field in fields %}
+        {% if field=='id' %}
+            {% set type = 'Edit' %}
+            <input name="{{field}}" value="{{ fieldsValues[field] }}" class="form-control" type="hidden">
+        {% else %}
+            <div class="form-group">
+                <label>{{field}}</label>
+                <input name="{{field}}" {% if fieldsValues[field] is defined %} value="{{ fieldsValues[field] }}" {% endif %} class="form-control" placeholder="Text here">
+            </div>
+        {% endif %}
+    {% endfor %#}
+    {% for item in ttt %}
+        {% if item.visible %}
+        <div class="form-group">
+            {% if item.label %}
+                <label>{{item.label | capitalize}}</label>
+            {% else %}
+                <label>{{item.name | capitalize}}</label>
+            {% endif %}
+            {{ item | raw }}
+        </div>
+        {% elseif item.type=='hidden' %}
+            {{ item | raw }}
+        {% endif %}
+    {% endfor %}
+        <!--<div class="form-group">
+            <label>File input</label>
+            <input type="file">
+        </div>
+        <div class="form-group">
+            <label>Text area</label>
+            <textarea rows="3" class="form-control"></textarea>
+        </div>-->
+        <a class="btn btn-danger" href="{{ path_for(all_e_link) }}">Cancel</a>
+        <button class="btn btn-success " type="submit">{{type}} {{ h1 }}</button>
+    </form>
+</div>
+<!-- /.col-lg-6 -->
+</div>
+<!-- /.row -->

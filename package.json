@@ -1,0 +1,60 @@
+{
+  "name": "SlimCMS",
+  "version": "1.0.0",
+  "description": "Lightweight CMS(CMF) based on: php framework slim 3, laravel eloquent, symfony event dispatcher, Twig templater and other libraries.",
+  "main": "webpack.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "webpack-dev-server --inline --hot --config config/webpack.dev.js",
+    "watch": "webpack --watch",
+    "build": "webpack --config config/webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrey900/SlimCMS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrey900/SlimCMS/issues"
+  },
+  "homepage": "https://github.com/andrey900/SlimCMS#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "babel-loader": "^8.0.1",
+    "classnames": "^2.2.6",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.2",
+    "react-animate-on-scroll": "^2.1.5",
+    "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "react-scroll": "^1.7.10",
+    "react-slick": "^0.23.1",
+    "react-slick-slider": "^0.15.10",
+    "redux": "^4.0.0",
+    "webpack": "^4.17.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-merge": "^4.1.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/plugin-transform-block-scoping": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.0.0",
+    "babel-eslint": "^8.2.6",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-typescript": "^7.0.0-alpha.19",
+    "css-loader": "^1.0.0",
+    "file-loader": "^2.0.0",
+    "react-hot-loader": "^4.3.8",
+    "source-map-loader": "^0.2.4",
+    "webpack-dev-server": "^3.1.5"
+  }
+}

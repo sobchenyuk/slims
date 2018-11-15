@@ -1,0 +1,40 @@
+{% extends '/public/main/base.twig' %}
+
+{% block browserTitle %} {{title}} - SlimCMS {% endblock %}
+
+{% block bodyContent %}
+    {% include '/public/main/layouts/header.twig' %}
+    <div class="container">
+	<h1>{{ pageData.name }}</h1>
+
+    {% if breadcrumbs %}
+		{{ breadcrumbs | raw }}
+	{% endif %}
+	
+	<div class="description">
+	    {{ pageData.detail_text | raw }}
+	</div>
+	<div class="sub-sections">
+		<h3>Sub sections</h3>
+		{% if subSections %}
+		<ul>
+			{% for item in subSections %}
+			<li><a href="{{ path_for('page.s'~item.id) }}">{{ item.name }}</a></li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+	</div>
+
+	<div class="items-in-section">
+		<h3>Page in section</h3>
+		{% if pagesLinks %}
+		<ul>
+			{% for item in pagesLinks %}
+			<li><a href="{{ path_for('page.sp'~pageData.id, { 'pageCode': item.code }) }}">{{ item.name }}</a></li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+	</div>
+    </div>
+    {% include '/public/main/layouts/footer.twig' %}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'admin.twig' %}
+
+
+{% block body %}
+	{% embed 'admin/layouts/header.twig' %}
+		{% block headerh %}
+			{% if type_link is defined %}
+				Edit {{h1}}
+			{% else %}
+				Add {{h1}}
+			{% endif %}
+		{% endblock %}
+
+        {% block header_button %}
+            <a href="{{ path_for(all_e_link) }}" class="btn btn-default">Back to {{h1}}</a>
+        {% endblock %}
+    {% endembed %}
+
+    {% include 'admin/layouts/adddata.twig' %}
+
+	{% include 'admin/layouts/footer.twig' %}
+{% endblock %}
+
+{% block footerAdditionalScripts %}
+<script src="/js/tinymce/tinymce.min.js"></script>
+<script>$(document).ready(function(){tinymce.init({ selector:'textarea.tinymce' });});</script>
+{% endblock %}

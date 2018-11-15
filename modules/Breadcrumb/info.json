@@ -1,0 +1,10 @@
+{
+  "name" : "Breadcrumb module",
+  "description" : "Make breadcrumb navigation if uses section module",
+  "system_name" : "Breadcrumb",
+  "version" : "1.0",
+  "author" : "Andrey Leo",
+  "tags" : ["breadcrumb"],
+  "licence" : "",
+  "author_url" : ""
+}

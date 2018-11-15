@@ -1,0 +1,87 @@
+{% extends 'admin.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                {% if errors is defined %}
+                    <div style="margin-top: 25px;margin-bottom:5px;" class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                        {{ errors }}
+                    </div>
+                {% endif %}
+                <div class="panel panel-primary" style="margin-top: 10%;">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Welcome to installer for SlimCMS - Step {{step}}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li role="presentation" class="{% if step == 1 %}active{% endif %} {% if step > 1 %}btn-success{% endif %}"><a href="javascript:void(0);" data-step="1">Step 1</a></li>
+                                    <li role="presentation" class="{% if step == 2 %}active{% endif %} {% if step > 2 %}btn-success{% endif %}"><a href="javascript:void(0);" data-step="2">Step 2</a></li>
+                                    <li role="presentation" class="{% if step == 3 %}active{% endif %} {% if step > 3 %}btn-success{% endif %}"><a href="javascript:void(0);" data-step="3">Step 3</a></li>
+                                    <li role="presentation" class="{% if step == 4 %}active{% endif %} {% if step > 4 %}btn-success{% endif %}"><a href="javascript:void(0);">Finish</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-8">
+                                {% embed 'admin/installer/step' ~ view ~ '.twig' %}{% endembed %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer text-right">&copy; <b>SlimCMS</b> - v0.0.9-alpha</div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block headerAdditionalStyle %}
+    {{ parent() }}
+    <style>
+    .nav .btn-success > a{ color: white; }
+    .nav .btn-success > a:hover, .nav .btn-success > a:focus{background-color:inherit;}
+    .form-group.text-right {
+    bottom: 0;
+    position: relative;
+    right: 35px;
+    }
+    form {
+    min-height: 165px;
+    }
+    .db-type{display:none;margin-top: 25px;}
+    .db-type label{width: 115px; text-align: right;}
+    </style>
+{% endblock %}
+{% block footerAdditionalScripts %}
+    <script>
+        $(document).ready(function () {
+            $(document).on('change', '#select-db-type', function(){
+                $('.db-type').hide();
+                var selector = $(this).find('option[value="'+$(this).val()+'"]').attr('data-block');
+                $(selector).show();
+            });
+            $(document).on('click', '.nav .btn-success a', function(){
+                var $form = $('form');
+                var $step = $form.find('input[name="step"]');
+                $step.val($(this).attr('data-step'));
+                $form.submit();
+            });
+            $(document).on('click', '.ajax-check-db', function(e){
+                e.preventDefault();
+                $.ajax({
+                    url:"/install-system/checkdb",
+                    method:"post",
+                    type:"json",
+                    data: $('#db-form').serialize()
+                }).done(function (data) {
+                    if(data.type == 'error'){
+                        alert(data.msg);
+                    } else {
+                        $('#db-form').submit();
+                    }
+                });
+            })
+        });
+    </script>
+{% endblock %}

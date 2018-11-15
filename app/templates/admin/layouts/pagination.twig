@@ -1,0 +1,30 @@
+<ul class="pagination">
+    <!-- Previous Page Link -->
+    {% if pagination.onFirstPage() %}
+    <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+    {% else %}
+    <li class="page-item"><a class="page-link" href="{{ pagination.previousPageUrl() }}" rel="prev">&laquo;</a></li>
+    {% endif %}
+
+    <!-- Pagination Elements -->
+    {% for element in pagination.pagenItems %}
+
+    <!-- Array Of Links -->
+    {% if element | length >= 1 %}
+    {% for page,url in element %}
+    {% if page == pagination.currentPage() %}
+    <li class="page-item active"><span class="page-link">{{ page }}</span></li>
+    {% else %}
+    <li class="page-item"><a class="page-link" href="{{ url }}">{{ page }}</a></li>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    {% endfor %}
+
+    <!-- Next Page Link -->
+    {% if pagination.hasMorePages() %}
+    <li class="page-item"><a class="page-link" href="{{ pagination.nextPageUrl() }}" rel="next">&raquo;</a></li>
+    {% else %}
+    <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+    {% endif %}
+</ul>

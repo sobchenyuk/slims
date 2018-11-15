@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>{% block browserTitle %} {{name}} {% endblock %}</title>
+	<link rel="stylesheet"href="/css/bootstrap.min.css">
+	{% block additionalStyles %}{% endblock %}
+    </head>
+    <body>
+	{% block bodyContent %}{% endblock %}
+	{% block additionalScripts %}
+        <script src="/js/bundle.js"></script>
+        {#<script src="http://localhost:9000/bundle.js"></script>#}
+    {% endblock %}
+    </body>
+</html>

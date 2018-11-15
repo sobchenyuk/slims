@@ -1,0 +1,16 @@
+{% extends '/base.twig' %}
+
+{% block browserTitle %} Home page from Slim CMS {% endblock %}
+
+{% block bodyContent %}
+    {% include '/public/main/layouts/header.twig' %}
+    <div class="container">
+	
+	<h1>Base template from cms</h1>
+	<p>Auth to admin panel: <a href="{{ path_for('login') }}">click</a></p>
+	<div class="description">
+	    {{ pageData.detail_text | raw }}
+	</div>
+    </div>
+    {% include '/public/main/layouts/footer.twig' %}
+{% endblock %}

@@ -1,0 +1,10 @@
+{
+  "name" : "Sections module",
+  "description" : "Make sections and categories in you site",
+  "system_name" : "Sections",
+  "version" : "1.0",
+  "author" : "Andrey Leo",
+  "tags" : ["sections", "categories"],
+  "licence" : "",
+  "author_url" : ""
+}

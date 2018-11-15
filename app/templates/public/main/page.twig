@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<head>
+	<!-- Basic -->
+	<meta charset="utf-8">
+	<title>{% block title %}{% endblock %}</title>
+	
+	{% block meta %}
+	<meta name="keywords" content="HTML5 Template" />
+	<meta name="description" content="Jets - Responsive HTML5 Template">
+	<meta name="author" content="funcoders.com">
+	{% endblock %}
+	
+	<!-- Mobile Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	{% block links %}
+	<!-- Favicons -->
+	<link rel="shortcut icon" type='image/x-icon' href="/img/favicon/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://jets.funcoders.com/demo/img/favicon/fapple-touch-icon-144x144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://jets.funcoders.com/demo/img/favicon/fapple-touch-icon-114x114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://jets.funcoders.com/demo/img/favicon/fapple-touch-icon-72x72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="http://jets.funcoders.com/demo/img/favicon/fapple-touch-icon-precomposed.png">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="/css/library/bootstrap/bootstrap.min.css" />
+
+	<!-- AWESOME and ICOMOON fonts -->
+	<link rel="stylesheet" href="/css/fonts/awesome/css/font-awesome.css">
+	<link rel="stylesheet" href="/css/fonts/icomoon/style.css">
+
+	<!-- Open Sans fonts -->
+	<link rel="stylesheet"  href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+
+	<!-- Theme CSS -->
+	<!-- <link rel="stylesheet" href="css/theme.min.css"> -->
+	<link rel="stylesheet" href="/css/theme.css">
+	<link rel="stylesheet" href="/css/theme-elements.min.css">
+	<!-- Slider revolution -->
+	<link rel="stylesheet" href="/js/library/slider-revolution/css/settings.css">
+	<link rel="stylesheet" href="/css/color/blue.css" id="layout-color">
+
+	<!-- Theme Options -->
+	<link rel="stylesheet" href="/CORE/css/options.css">
+
+	<link rel="stylesheet" href="/css/library/animate/animate.min.css">
+	{% endblock %}
+</head>
+
+<body class="index">
+	{% block language %}
+	<aside class="side-options side-options-right" id="language-options">
+		<div class="side-options-heading">
+			<a href="index.html"><span class="current-language">RU</span>Language</a>
+		</div>
+	</aside><!-- .side-options -->
+	{% endblock %}
+
+	<!-- For mobile preview -->
+	<script type="text/javascript">
+		if ((window.location !== window.parent.location && !(/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()))) == true) { document.body.style.overflowY = "scroll"; }
+	</script>
+
+	<header id="header">
+		{% block topbar %}
+			<aside class="topbar">
+				<div class="container">
+
+					<ul class="touch">
+						<li>
+							<img src="img/phone.png" alt="Phone" title="Phone">
+							<p>1800-2233-4455<br />1800-6677-8899</p>
+						</li>
+						<li>
+							<img src="img/mail.png" alt="Mail" title="Mail">
+							<p><a href="mailto:victoria@yoursite.com">victoria@yoursite.com</a><br /><a href="mailto:macdonald@yoursite.com">macdonald@yoursite.com</a></p>
+						</li>
+						<li>
+							<img src="img/map.png" alt="Map" title="Map">
+							<p>322 Victoria Street<br />Darlinghurst NSW 2010</p>
+						</li>
+					</ul><!-- .touch -->
+
+					<ul class="user-nav">
+						<li><a href="index.html#login-register" data-toggle="modal" title="Log in">Log In</a></li>
+						<li><a href="index.html#login-register" data-toggle="modal" title="Create an account" class="btn">Register</a></li>
+					</ul><!-- .user-nav -->
+
+					<ul class="user-nav" style="display:none">
+						<li><a href="index.html#" title="John Doe"></a></li>
+						<li><a href="index.html#" title="John Doe">John Doe</a> | </li>
+						<li><a href="index.html#" title="Log Out">Log out</a></li>
+					</ul><!-- .user-nav -->
+
+					<ul class="social">
+						<li><a href="index.html#" class="dribbble"></a></li>
+						<li><a href="index.html#" class="pinterest"></a></li>
+						<li><a href="index.html#" class="facebook"></a></li>
+						<li><a href="index.html#" class="twitter"></a></li>
+						<li><a href="index.html#" class="google"></a></li>
+					</ul><!-- .social -->
+
+				</div><!-- .container -->
+			</aside><!-- .topbar -->
+		{% endblock %}
+
+		{% block headermenu %}
+
+		<div class="navbar megamenu-width">
+			<div class="container">
+				
+				<div class="navbar-inner">
+					<a href="index.html" class="logo" >
+						<img src="img/logo.png" alt="Jets">
+					</a><!-- .logo -->
+					
+					<ul id="mobile-menu">
+						<li><a href="index.html#login-register" data-toggle="modal" title="Log in">Log In</a></li>
+						<li><a href="index.html#login-register" data-toggle="modal" title="Create an account">Register</a></li>
+						<li>
+							<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+								<i class="fa fa-reorder"></i>
+							</button>
+						</li>
+						<li><a class="btn-search" href="index.html#"><i class="fa fa-search"></i></a></li>
+					</ul><!-- #mobile-menu -->
+
+					<ul id="main-menu" class="collapse navbar-collapse nav slide">
+						<li class='active'><a href="index.html">Главная</a></li>
+						<li class=''><a href="index.html">О нас</a></li>
+						<li class=''><a href="index.html">Наши цены</a></li>
+						<li class=''><a href="index.html">Контакты</a></li>
+					</ul><!-- #main-menu -->
+				</div><!-- .navbar-inner -->
+
+			</div><!-- .container -->
+		</div><!-- .navbar -->
+		{% endblock %}
+	</header>
+
+	{% block headerblock %}
+	{% endblock %}
+
+	{% block content %}
+	{% endblock %}
+
+{% block footer %}
+	<footer id="footer">
+		<div class="container">
+		{#
+			<div class="row row-inline">
+				<div class="col-sm-6">
+
+					<div class="title title-main">
+						<h5>Newsletter</h5>
+					</div>
+					<div class="text">
+						<p>Keep up on our always evolving product features and technology. Enter your e-mail and subscribe to our newsletter.</p>
+					</div>
+
+				</div><!-- .col-sm-6 -->
+				<div class="col-sm-6">
+
+					<form action="http://jets.funcoders.com/demo/php/newsletter.php" method="POST" class="form-validate" data-submit="ajax">
+						<button type="submit" class="btn btn-big btn-icon-newsletter"></button>
+						<div class="form-field">
+							<div class="placeholder">
+								<label for="subscribeemail">email...</label>
+								<input class="form-control" type="email" maxlength="100" name="subscribeemail" id="subscribeemail" required />
+							</div>
+						</div>
+					</form>
+
+				</div><!-- .col-sm-6 -->
+			</div><!-- .row-->
+#}
+			<hr class="devider-heavy" />
+			<div class="row">
+				<div class="col-sm-3">
+
+					<div class="widget">
+						<div class="widget-heading">
+
+							<div class="title title-main">
+								<a href="index.html" class="logo">
+									<img src="/img/logo-white.png" alt="Jets">
+								</a>
+							</div>
+
+						</div><!-- .widget-heading -->
+						<div class="widget-content">
+
+							<div class="text">
+								<p class="personal-info-text">
+									<b>Индивидуальный предприниматель</b>
+									<br>
+									<span>Новицкий Евгений Юрьевич</span>
+									<br>
+									<b>Адрес: </b><span>220137.Минск, ул.Охотская 147,97</span>
+									<br>
+									<b>Расчетный счет:	</b><span>3013016366012  в "Приорбанк" ОАО ЦБУ 102 г.Минск, Логойский тракт 15/1, код 153001749</span>
+									<b>УНП: </b><span>691081870</span>
+								</p>
+							</div>
+
+						</div><!-- .widget-content -->
+					</div><!-- .widget -->
+
+				</div><!-- .col-sm-3 -->
+				<div class="col-sm-3">
+
+					<div class="widget">
+						<div class="widget-heading">
+
+							<div class="title title-main">
+								<h5>Latest from Blog</h5>
+							</div>
+
+						</div><!-- .widget-heading -->
+						<div class="widget-content">
+
+							<section class="posts">
+								<article class="post post-mini post-type-text">
+									<div class="post-heading">
+										<div class="thumbnail">
+											<a class="link" href="blog-single.html">
+												<span class="btn btn-icon-link"></span>
+												<img src="../CORE/uploads/images/content/front_side_black_car/front_side_black_car_SQ.jpg" alt="Front Side Black Car">
+											</a>
+										</div><!-- .thumbnail -->
+									</div><!-- .post-heading -->
+									<div class="post-content">
+										<div class="title">
+											<h2 class="h5"><a href="blog-single.html">Sed ut perspiciatis unde omnis iste</a></h2>
+										</div><!-- .title -->
+									</div><!-- .post-content -->
+								</article><!-- .post -->
+								<article class="post post-mini post-type-music">
+									<div class="post-heading">
+										<div class="thumbnail">
+											<a class="link" href="blog-single.html">
+												<span class="btn btn-icon-link"></span>
+												<img src="../CORE/uploads/images/content/hand_drawing_song_girl/hand_drawing_song_girl_SQ.jpg" alt="Hand Drawing Song Girl">
+											</a>
+										</div><!-- .thumbnail -->
+									</div><!-- .post-heading -->
+									<div class="post-content">
+										<div class="title">
+											<h2 class="h5"><a href="blog-single.html">Consequuntur magni dolores</a></h2>
+										</div><!-- .title -->
+									</div><!-- .post-content -->
+								</article><!-- .post -->
+							</section><!-- .posts -->
+
+						</div><!-- .widget-content -->
+					</div><!-- .widget -->
+
+				</div><!-- .col-sm-3 -->
+				<div class="col-sm-3">
+
+					<div class="widget">
+						<div class="widget-heading">
+
+							<div class="title title-main">
+								<h5>Popular tags</h5>
+							</div><!-- .title -->
+
+						</div><!-- .widget-heading -->
+						<div class="widget-content">
+
+							<div class="tags">
+								<p><a href="index.html#" rel="tag">quam</a><a href="index.html#" rel="tag">porta</a><a href="index.html#" rel="tag">pretium</a><a href="index.html#" rel="tag">ultricies</a><a href="index.html#" rel="tag">nulla</a><a href="index.html#" rel="tag">scelerisque</a><a href="index.html#" rel="tag">nisi</a><a href="index.html#" rel="tag">uspendisse</a><a href="index.html#" rel="tag">massa</a><a href="index.html#" rel="tag">libero</a><a href="index.html#" rel="tag">auctor </a><a href="index.html#" rel="tag">arcu</a><a href="index.html#" rel="tag">enim</a><a href="index.html#" rel="tag">varius</a><a href="index.html#" rel="tag">dui</a><a href="index.html#" rel="tag">imperdiet</a><a href="index.html#" rel="tag">adipiscing</a><a href="index.html#" rel="tag">rhoncus</a><a href="index.html#" rel="tag">fermentum</a><a href="index.html#" rel="tag">ligula</a><a href="index.html#" rel="tag">sagittis</a><a href="index.html#" rel="tag">nunc</a><a href="index.html#" rel="tag">orci</a></p>
+							</div><!-- .tags -->
+
+						</div><!-- .widget-content -->
+					</div><!-- .widget -->
+
+				</div><!-- .col-sm-3 -->
+				<div class="col-sm-3">
+
+					<div class="widget">
+						<div class="widget-heading">
+							<div class="title title-main">
+								<h5>Photostream</h5>
+							</div>
+						</div><!-- .widget-heading -->
+						<div class="widget-content">
+							<ul id="flickr" data-id="41389393@N02" class="photo-stream"></ul>
+						</div><!-- .widget-content -->
+					</div><!-- .widget -->
+
+				</div><!-- .col-sm-3 -->
+			</div><!-- .row-->
+			<hr class="devider-heavy" />
+			{% block menuFooter %}
+			<ul class="nav text-center">
+				<li><a href="/">Главня</a></li>
+				<li><a href="/about/">О нас</a></li>
+				<li><a href="/prices/">Наши цены</a></li>
+				<li><a href="/contacts/">Конакты</a></li>
+			</ul>
+			{% endblock %}
+			<hr class="devider-heavy" />
+			<div class="row-inline-wrap">
+				<div class="row row-inline">
+					<div class="col-md-7">
+
+						<ul class="touch">
+							<li><i class="fa icomoon-location"></i><p>322 Victoria Street<br />Darlinghurst NSW 2010</p></li>
+							<li><i class="fa fa-phone"></i><p>1800-2233-4455<br />1800-6677-8899</p></li>
+							<li><i class="fa fa-envelope"></i><p><a href="mailto:victoria@yoursite.com">victoria@yoursite.com</a><br /><a href="mailto:macdonald@yoursite.com">macdonald@yoursite.com</a></p></li>
+						</ul>
+
+					</div><!-- .col-md-7 -->
+					<div class="col-md-5">
+
+						{#<ul class="social">
+							<li><a href="index.html#" class="rss"></a></li>
+							<li><a href="index.html#" class="google"></a></li>
+							<li><a href="index.html#" class="vimeo"></a></li>
+							<li><a href="index.html#" class="youtube"></a></li>
+							<li><a href="index.html#" class="facebook"></a></li>
+							<li><a href="index.html#" class="twitter"></a></li>
+						</ul>#}
+
+					</div><!-- .col-md-5 -->
+				</div><!-- .row -->
+			</div><!-- .row-inline-wrap -->
+		</div><!-- .container -->
+		<div class="credits">1с-битрикс.бел © 2016<span>|</span><a href="/">разработка сайтов</a></div>
+	</footer>
+	{% endblock %}
+
+	<a class="btn btn-icon-top" id="toTop" href="index.html#"></a>
+
+	{% block scripts %}
+	<!-- jQuery & Helper library -->
+	<script type="text/javascript" src="/js/library/jquery/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="/js/library/jquery/jquery-ui-1.10.4.custom.min.js"></script>
+	<script type="text/javascript" src="/js/library/jquery/datepicker-fr.js"></script>
+
+	<!-- Retina js -->
+	<script type="text/javascript" src="/js/library/retina/retina.min.js"></script>
+
+	<!-- FancyBox -->
+	<script type="text/javascript" src="/js/library/fancybox/jquery.fancybox.pack.js%3Fv=2.1.5"></script>
+
+	<!-- Bootstrap js -->
+	<script type="text/javascript" src="/js/library/bootstrap/bootstrap.min.js"></script>
+
+	<!-- Validate -->
+	<script type="text/javascript" src="/js/library/validate/jquery.validate.min.js"></script>
+
+	<!-- FlickrFeed  -->
+	<script type="text/javascript" src="/js/library/jFlickrFeed/jflickrfeed.min.js"></script>
+	
+	<!-- carouFredSel -->
+	<script type="text/javascript" src="/js/library/carouFredSel/jquery.carouFredSel-6.2.1-packed.js"></script>
+					
+	<!-- Mediaelementjs -->
+	<script type="text/javascript" src="/js/library/mediaelementjs/mediaelement-and-player.min.js"></script>
+		
+	<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+	<script type="text/javascript" src="/js/library/slider-revolution/js/jquery.themepunch.tools.min.js"></script>
+	<script type="text/javascript" src="/js/library/slider-revolution/js/jquery.themepunch.revolution.min.js"></script>
+	<script type="text/javascript" src="/js/slider.js"></script>
+	
+	<!-- Main theme javaScript file -->
+	<script type="text/javascript" src="/js/theme.min.js"></script>
+	
+	<!-- Options -->
+	<script type="text/javascript" src="../CORE/js/library/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../CORE/js/options.js"></script>
+	{% endblock %}
+
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript">
+	(function(d,w,c){(w[c]=w[c]||[]).push(function(){try{w.yaCounter35413270=new Ya.Metrika({id:35413270,clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true})}catch(e){}});var n=d.getElementsByTagName("script")[0],s=d.createElement("script"),f=function(){n.parentNode.insertBefore(s,n)};s.type="text/javascript";s.async=true;s.src="https://mc.yandex.ru/metrika/watch.js";if(w.opera=="[object Opera]"){d.addEventListener("DOMContentLoaded",f,false)}else{f()}})(document,window,"yandex_metrika_callbacks");
+	</script>
+	<!-- /Yandex.Metrika counter -->
+
+</body>
+</html>

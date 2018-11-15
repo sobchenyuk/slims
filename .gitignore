@@ -1,0 +1,15 @@
+.idea/
+vendor/
+log/*
+cache/*
+uploads/*
+.idea/*
+composer.lock
+.env
+app/config/*
+resource/*
+
+
+/node_modules
+/.git
+package-lock.json

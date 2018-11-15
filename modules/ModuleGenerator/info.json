@@ -1,0 +1,10 @@
+{
+  "name" : "Module generator",
+  "description" : "Create new module in admin panel",
+  "system_name" : "ModuleGenerator",
+  "version" : "1.0",
+  "author" : "Andrey Leo",
+  "tags" : ["modules", "generator"],
+  "licence" : "",
+  "author_url" : ""
+}

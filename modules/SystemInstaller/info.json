@@ -1,0 +1,10 @@
+{
+  "name" : "System installer",
+  "description" : "Create base config system, and insert dat to db",
+  "system_name" : "SystemInstaller",
+  "version" : "1.0",
+  "author" : "Andrey Leo",
+  "tags" : ["modules", "installer"],
+  "licence" : "",
+  "author_url" : ""
+}

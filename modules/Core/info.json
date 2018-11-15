@@ -1,0 +1,10 @@
+{
+  "name" : "Core module",
+  "description" : "Core module for SlimCMS",
+  "system_name" : "Core",
+  "version" : "1.0",
+  "author" : "Andrey Leo",
+  "tags" : ["core"],
+  "licence" : "",
+  "author_url" : ""
+}

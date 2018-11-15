@@ -1,0 +1,18 @@
+<form role="form" action="{{ path_for('installer') }}" method="POST">
+    <input type="hidden" name="step" value="finish">
+    {% for name, value in prevData %}
+        <input type="hidden" name="{{name}}" value="{{ value }}">
+    {% endfor %}
+    <div class="form-group">
+        <label>Select modules</label><br>
+        <select multiple name="modules[]">
+            <option value="Sections">Sections and category</option>
+            <option value="Breadcrumb">Breadcrumbs</option>
+            <option value="ModuleGenerator">Module creator</option>
+        </select>
+        <p class="text-danger"><small><sup>*</sup>Hold down the <b>control (ctrl)</b> button to select multiple options</small></p>
+    </div>
+    <div class="form-group text-right">
+        <input class="btn btn-success" type="submit" value="Install >">
+    </div>
+</form>

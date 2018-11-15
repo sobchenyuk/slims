@@ -1,0 +1,12 @@
+<form role="form" action="{{ path_for('installer') }}" method="POST">
+    <input type="hidden" name="step" value="{{ step+1 }}">
+    <div class="form-group">
+        <label>Select Localization</label>
+        <select>
+            <option>English</option>
+        </select>
+    </div>
+    <div class="form-group text-right">
+        <input class="btn btn-success" type="submit" value="Next >">
+    </div>
+</form>

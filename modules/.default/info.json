@@ -1,0 +1,10 @@
+{
+  "name" : "%name%",
+  "description" : "%description%",
+  "system_name" : "%system_name%",
+  "version" : "%version%",
+  "author" : "%author%",
+  "tags" : [],
+  "licence" : "",
+  "author_url" : ""
+}

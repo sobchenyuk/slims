@@ -1,0 +1,72 @@
+{% extends 'admin.twig' %}
+
+{% block body %}
+	{% include 'admin/layouts/header.twig' %}
+<div class="row">
+<div class="col-md-12">
+    <div class="panel panel-default">
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                        {% for field in fields %}
+                            <th>{{field}}</th>
+                        {% endfor %}
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in items %}
+                        <tr>
+                            {% for field in fields %}
+                            	{% if field=='GroupName' %}
+                            		<td>{{item.getGroupOptions().name}}</td>
+                            	{% else %}
+                            		<td>{{item[field][:50]}}</td>
+                            	{% endif %}
+                            {% endfor %}
+                            <td>
+                                <a href="{{ path_for(edit_link, {'id': item.id}) }}" class="btn btn-xs btn-primary">edit</a>
+                                {% if developMode %}
+                                <form method="POST" action="{{ path_for(delete_link, {'id': item.id}) }}" style="display:inline;">
+                                    <input name="{{csrf.valueKey}}" type="hidden" value="{{csrf.value}}">
+                                    <input name="{{csrf.nameKey}}" type="hidden" value="{{csrf.name}}">
+
+                                    <button type="success" class="btn btn-xs btn-danger">delete</button>
+                                </form>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.table-responsive -->
+            <table class="table">
+                <tr>
+                <td>{% include 'admin/layouts/pagination.twig' with {'pagination': items} %}</td>
+                <td class="text-right">
+                    <form class="pagination ajax ajax-form">
+                        <b>Count: </b>
+                        <select class="ajax-submit" name="count_page">
+                            {% for p in page_counts %}
+                                <option value="{{p}}" {% if page_count==p %}selected=""{% endif %}>{{p}}</option>
+                            {% endfor %}
+                        </select>
+                    </form>
+                </td>
+                </tr>
+            </table>
+            {#{ items.hasMorePages() }#}
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>
+<!-- /.col-lg-6 -->
+</div>
+<!-- /.row -->
+	{% include 'admin/layouts/footer.twig' %}	
+{% endblock %}

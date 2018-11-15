@@ -1,0 +1,39 @@
+<form id="db-form" role="form" action="{{ path_for('installer') }}" method="POST">
+    <input type="hidden" name="step" value="{{ step+1 }}">
+    {% for name, value in prevData %}
+        <input type="hidden" name="{{name}}" value="{{ value }}">
+    {% endfor %}
+    <div class="form-group">
+        <label>Select Db type</label>
+        <select name="dbType" id="select-db-type">
+            <option value="mysql" data-block="#mysql">Mysql</option>
+            <option value="sqlite" data-block="#sqlite">Sqlite</option>
+        </select>
+
+        <div class="db-type" id="mysql" style="display: block;">
+            <div class="form-group">
+                <label>Host: </label>
+                <input name="dbHost" placeholder="host">
+            </div>
+            <div class="form-group">
+                <label>Database name: </label>
+                <input name="dbName" placeholder="db name">
+            </div>
+            <div class="form-group">
+                <label>User: </label>
+                <input name="dbLogin" placeholder="login">
+            </div>
+            <div class="form-group">
+                <label>Password: </label>
+                <input type="password" name="dbPassword" placeholder="password">
+            </div>
+        </div>
+        <div class="form-group db-type" id="sqlite">
+            <label>Insert db name</label>
+            <input name="dbFileName" placeholder="Database name">
+        </div>
+    </div>
+    <div class="form-group text-right">
+        <input class="btn btn-success ajax-check-db" type="submit" value="Check >">
+    </div>
+</form>
